@@ -11,4 +11,10 @@
     <string name="register">Register</string>
     <string name="email_or_username_required">Email or username is required</string>
     <string name="password_required">Password is required</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_retry">Retry</string>
+    <string name="logout_confirmation_title">Logout</string>
+    <string name="logout_confirmation_message">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

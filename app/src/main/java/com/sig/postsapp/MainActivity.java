@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.sig.postsapp.core.Constants;
 import com.sig.postsapp.databinding.ActivityMainBinding;
 import com.sig.postsapp.presentation.LoginActivity;
+import com.sig.postsapp.presentation.PostsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
         if (!sharedPreferences.getBoolean(Constants.IS_LOGGED_IN, false)) {
             startActivity(new Intent(this, LoginActivity.class));
             finishAffinity();
+        } else {
+            startActivity(new Intent(this, PostsActivity.class));
+            finishAffinity();
         }
-//        else {
-//            startActivity(new Intent(this, HomeActivity.class));
-//            finishAffinity();
-//        }
 
 
         setContentView(binding.getRoot());
