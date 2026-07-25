@@ -13,6 +13,8 @@
     <string name="password_required">Password is required</string>
     <string name="btn_logout">Logout</string>
     <string name="btn_retry">Retry</string>
+    <string name="feed">Feed</string>
+    <string name="error_icon_description">Error Icon</string>
     <string name="logout_confirmation_title">Logout</string>
     <string name="logout_confirmation_message">Are you sure you want to logout?</string>
     <string name="yes">Yes</string>

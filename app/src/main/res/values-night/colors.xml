@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text_color">#FFFFFF</color>
-    <color name="background_color">#121212</color>
-    <color name="red_error">#CF6679</color>
+    <!-- Brand Colors (Dark Indigo - Desaturated) -->
+    <color name="primary">#9FA8DA</color> <!-- Indigo 200 -->
+    <color name="primary_container">#3F51B5</color>
+    <color name="on_primary">#1A237E</color>
+    <color name="on_primary_container">#E8EAF6</color>
+
+    <color name="secondary">#C5CAE9</color> <!-- Indigo 100 -->
+    <color name="secondary_container">#3949AB</color>
+    <color name="on_secondary">#000051</color>
+    <color name="on_secondary_container">#E8EAF6</color>
+
+    <color name="tertiary">#C5CAE9</color>
+    <color name="tertiary_container">#283593</color>
+    <color name="on_tertiary">#00002F</color>
+    <color name="on_tertiary_container">#9FA8DA</color>
+
+    <!-- Neutral Colors (Dark) -->
+    <color name="background">#1B1B1F</color>
+    <color name="on_background">#E3E2E6</color>
+    <color name="surface">#1B1B1F</color>
+    <color name="on_surface">#E3E2E6</color>
+    <color name="surface_variant">#45464F</color>
+    <color name="on_surface_variant">#C6C6D0</color>
+    <color name="outline">#90909A</color>
+
+    <!-- Semantic Colors -->
+    <color name="error">#FFB4AB</color>
+    <color name="on_error">#690005</color>
+    <color name="error_container">#93000A</color>
+    <color name="on_error_container">#FFDAD6</color>
+
+    <!-- Legacy / Compatibility -->
+    <color name="text_color">#E3E2E6</color>
+    <color name="background_color">#1B1B1F</color>
+    <color name="red_error">#FFB4AB</color>
 </resources>

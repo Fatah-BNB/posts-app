@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand Colors (Indigo) -->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_container">#E8EAF6</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_container">#1A237E</color>
+
+    <color name="secondary">#5C6BC0</color>
+    <color name="secondary_container">#C5CAE9</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="on_secondary_container">#000051</color>
+
+    <color name="tertiary">#283593</color>
+    <color name="tertiary_container">#9FA8DA</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="on_tertiary_container">#00002F</color>
+
+    <!-- Neutral Colors -->
+    <color name="background">#FBFCFF</color>
+    <color name="on_background">#1B1B1F</color>
+    <color name="surface">#FBFCFF</color>
+    <color name="on_surface">#1B1B1F</color>
+    <color name="surface_variant">#E2E2EC</color>
+    <color name="on_surface_variant">#45464F</color>
+    <color name="outline">#767680</color>
+
+    <!-- Semantic Colors -->
+    <color name="error">#BA1A1A</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="on_error_container">#410002</color>
+
+    <!-- Legacy / Compatibility (To be replaced in layouts) -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="text_color">#000000</color>
-    <color name="background_color">#FFFFFFFF</color>
-    <color name="red_error">#C71515</color>
+    <color name="text_color">#1B1B1F</color>
+    <color name="background_color">#FBFCFF</color>
+    <color name="red_error">#BA1A1A</color>
 </resources>

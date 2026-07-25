@@ -1,5 +1,6 @@
 package com.sig.postsapp.core;
 
+ // generic class that holds a value with its loading status.
 public class Resource<T> {
 
     public enum Status { LOADING, SUCCESS, ERROR }
