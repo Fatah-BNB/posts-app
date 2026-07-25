@@ -26,25 +26,21 @@ import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class PostListFragment extends Fragment {
-
-    public interface OnPostClickListener {
-        void onPostClick(Post post);
-    }
+public class PostListFragment extends Fragment implements PostAdapter.OnPostClickListener {
 
     private FragmentPostListBinding binding;
     private PostListViewModel viewModel;
     private PostAdapter adapter;
     private SharedPreferences sharedPreferences;
-    private OnPostClickListener listener;
+    private PostAdapter.OnPostClickListener listener;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof OnPostClickListener) {
-            listener = (OnPostClickListener) context;
+        if (context instanceof PostAdapter.OnPostClickListener) {
+            listener = (PostAdapter.OnPostClickListener) context;
         } else {
-            throw new RuntimeException(context + " must implement OnPostClickListener");
+            throw new RuntimeException(context + " must implement PostAdapter.OnPostClickListener");
         }
     }
 
@@ -62,11 +58,7 @@ public class PostListFragment extends Fragment {
         sharedPreferences = requireContext().getSharedPreferences(Constants.AUTH_PREFS_NAME, Context.MODE_PRIVATE);
         viewModel = new ViewModelProvider(this).get(PostListViewModel.class);
 
-        adapter = new PostAdapter(post -> {
-            if (listener != null) {
-                listener.onPostClick(post);
-            }
-        });
+        adapter = new PostAdapter(this);
 
         binding.recyclerPosts.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recyclerPosts.setAdapter(adapter);
@@ -75,6 +67,13 @@ public class PostListFragment extends Fragment {
         binding.btnLogout.setOnClickListener(v -> logout());
 
         viewModel.getPosts().observe(getViewLifecycleOwner(), this::render);
+    }
+
+    @Override
+    public void onPostClick(Post post) {
+        if (listener != null) {
+            listener.onPostClick(post);
+        }
     }
 
     private void render(Resource<List<Post>> resource) {

@@ -19,7 +19,7 @@ import com.sig.postsapp.domain.model.Post;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class PostsActivity extends AppCompatActivity implements PostListFragment.OnPostClickListener {
+public class PostsActivity extends AppCompatActivity implements PostAdapter.OnPostClickListener {
     private ActivityPostsBinding binding;
     private SharedPreferences sharedPreferences;
 

@@ -18,4 +18,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="btn_back">Back</string>
+    <string name="error_server">Server error (%1$d)</string>
+    <string name="error_network">Network error, please check your connection</string>
+    <string name="error_unknown">An unknown error occurred</string>
 </resources>

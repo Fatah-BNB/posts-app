@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.os.BundleCompat;
 import androidx.fragment.app.Fragment;
 
 import com.sig.postsapp.databinding.FragmentPostDetailBinding;
@@ -52,7 +53,7 @@ public class PostDetailFragment extends Fragment {
         binding.btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
 
         if (getArguments() != null) {
-            Post post = (Post) getArguments().getSerializable(ARG_POST);
+            Post post = BundleCompat.getSerializable(getArguments(), ARG_POST, Post.class);
             if (post != null) {
                 binding.txtTitle.setText(post.getTitle());
                 binding.txtBody.setText(post.getBody());

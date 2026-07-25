@@ -1,7 +1,10 @@
 package com.sig.postsapp.data.repository;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 
+import com.sig.postsapp.R;
 import com.sig.postsapp.data.remote.ApiService;
 import com.sig.postsapp.data.remote.PostDto;
 import com.sig.postsapp.data.remote.PostMapper;
@@ -13,16 +16,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import retrofit2.Call;
 import retrofit2.Response;
 
 public class PostRepositoryImpl implements PostRepository {
 
     private final ApiService apiService;
+    private final Context context;
 
     @Inject
-    public PostRepositoryImpl(ApiService apiService) {
+    public PostRepositoryImpl(ApiService apiService, @ApplicationContext Context context) {
         this.apiService = apiService;
+        this.context = context;
     }
 
     @Override
@@ -33,15 +39,15 @@ public class PostRepositoryImpl implements PostRepository {
                 if (response.isSuccessful() && response.body() != null) {
                     callback.onSuccess(PostMapper.toDomainList(response.body()));
                 } else {
-                    callback.onError("Erreur serveur (" + response.code() + ")");
+                    callback.onError(context.getString(R.string.error_server, response.code()));
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<PostDto>> call, @NonNull Throwable t) {
                 callback.onError(t instanceof IOException
-                        ? "Erreur réseau, vérifiez votre connexion"
-                        : "Erreur inconnue");
+                        ? context.getString(R.string.error_network)
+                        : context.getString(R.string.error_unknown));
             }
         });
     }
